@@ -1,5 +1,5 @@
 {
-  "name": "caouecs/laravel4-clef",
+  "name": "caouecs/clef",
   "description": "Implementation of Clef authentication in Laravel 4",
   "keywords": ["laravel", "clef", "lpm"],
   "license": "MIT",
