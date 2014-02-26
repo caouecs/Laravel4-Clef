@@ -1,0 +1,11 @@
+{
+  "providers": [
+    "Caouecs\\Clef\\ClefServiceProvider"
+  ],
+  "aliases": [
+    {
+      "alias": "Clef",
+      "facade": "Caouecs\\Clef\\Clef"
+    }
+  ]
+}

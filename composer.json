@@ -1,0 +1,25 @@
+{
+  "name": "caouecs/laravel4-clef",
+  "description": "Implementation of Clef authentication in Laravel 4",
+  "keywords": ["laravel", "clef", "lpm"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "caouecs",
+      "email": "caouecs@caouecs.net"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.0",
+    "illuminate/support": "~4"
+  },
+  "autoload": {
+    "classmap": [
+      "src/migrations"
+    ],
+    "psr-0": {
+      "Caouecs\\Clef\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}
