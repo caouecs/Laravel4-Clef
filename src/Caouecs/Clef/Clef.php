@@ -108,7 +108,7 @@ class Clef {
             'method'  => 'GET'
         ));
 
-        $url = self::$clef_base_url."info?access_token=".$authorize['access_token'];
+        $url = self::$clef_base_url."info?access_token=".$access_token;
 
         // exchange the oauth token for the user's info
         $context  = stream_context_create($opts);
