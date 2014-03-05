@@ -22,7 +22,7 @@ Next, you must migrate config :
 
 After installation, the config file is located at *app/config/packages/caouecs/clef/clef.php*.
 
-You can define :
+You must define :
 
 * the app_id of your application
 * the app_secret of your application
@@ -38,6 +38,10 @@ You can add an application in [Clef.io](https://getclef.com/developer/).
 * button : display button for Login, by javascript
 * customButtom : display custom button for Login
 
-## Todo
+## Example
 
-* example of controller class for login, identification and logout
+In `example` directory, you can find three files :
+
+* ClefController.php : examples for authentication and logout ( not finish for new account )
+* create_authentications_table.php : `Authentication` table
+* routes.php : routes for ClefController.php
