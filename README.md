@@ -1,4 +1,5 @@
 # Laravel4-Clef
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/caouecs/laravel4-clef/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 Integrate the Clef.io tools in a Laravel project.
 
