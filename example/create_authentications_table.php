@@ -3,7 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAuthenticationsTable extends Migration {
+class CreateAuthenticationsTable extends Migration
+{
 
     /**
      * Run the migrations.
@@ -12,8 +13,7 @@ class CreateAuthenticationsTable extends Migration {
      */
     public function up()
     {
-        Schema::create('authentications', function(Blueprint $table)
-        {
+        Schema::create('authentications', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->string('email')->nullable();
@@ -23,7 +23,6 @@ class CreateAuthenticationsTable extends Migration {
             $table->timestamps();
 
             $table->engine = 'InnoDB';
-
         });
     }
 

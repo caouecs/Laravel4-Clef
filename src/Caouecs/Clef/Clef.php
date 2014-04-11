@@ -1,7 +1,7 @@
 <?php namespace Caouecs\Clef;
 
-class Clef {
-
+class Clef
+{
     /**
      * Clef base url
      *
@@ -22,8 +22,9 @@ class Clef {
         $config = self::config();
 
         // no configuration file
-        if ($config == false)
+        if ($config == false) {
             return false;
+        }
 
         $url = self::$clef_base_url."logout";
 
@@ -45,8 +46,9 @@ class Clef {
         if ($response != false) {
             $response = json_decode($response, true);
 
-            if (isset($response['success']) && $response['success'] == true)
+            if (isset($response['success']) && $response['success'] == true) {
                 return $response['clef_id'];
+            }
         }
 
         return false;
@@ -132,17 +134,20 @@ class Clef {
      */
     public static function authentication($code = '')
     {
-        if (empty($code))
+        if (empty($code)) {
             return false;
+        }
 
         // authorize
         $authorize = self::authorize($code);
 
-        if ($authorize == false)
+        if ($authorize == false) {
             return false;
+        }
 
-        if (isset($authorize['error']))
+        if (isset($authorize['error'])) {
             return $authorize;
+        }
 
         // return infos
         return self::info($authorize['access_token']);
@@ -162,8 +167,9 @@ class Clef {
         $config = self::config();
 
         // no configuration file
-        if ($config == false)
+        if ($config == false) {
             return null;
+        }
 
         // Params
         $color = (isset($params['color']) && $params['color'] == "white") ? "white" : "blue";
@@ -187,8 +193,9 @@ class Clef {
         $config = self::config();
 
         // no configuration file
-        if ($config == false)
+        if ($config == false) {
             return null;
+        }
 
         $attributes = Helpers::addClass($attributes, "clef");
 
@@ -207,8 +214,9 @@ class Clef {
         $config = \Config::get("clef::clef");
 
         // no configuration file
-        if (empty($config))
+        if (empty($config)) {
             return false;
+        }
 
         return $config;
     }

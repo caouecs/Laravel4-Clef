@@ -1,6 +1,7 @@
 <?php namespace Caouecs\Clef;
 
-class Helpers {
+class Helpers
+{
 
     /**
      * Add value in an array

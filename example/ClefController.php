@@ -1,6 +1,7 @@
 <?php
 
-class ClefController extends BaseController {
+class ClefController extends BaseController
+{
 
     /**
      * Authentication with Clef account

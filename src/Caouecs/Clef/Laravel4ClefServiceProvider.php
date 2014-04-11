@@ -2,7 +2,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class ClefServiceProvider extends ServiceProvider {
+class ClefServiceProvider extends ServiceProvider
+{
 
     /**
      * Indicates if loading of the provider is deferred.
