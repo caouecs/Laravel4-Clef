@@ -9,7 +9,7 @@ This package is available through `Packagist` and `Composer`.
 
 Add `"caouecs/clef": "dev-master"` to your composer.json or run `composer require caouecs/clef`.
 
-Then you have to add `"Caouecs\Clef\ClefServiceProvider"` to your list of providers in your `app/config/app.php`, and a list of elements for aliases :
+Then you have to add `"Caouecs\Clef\Laravel4ClefServiceProvider"` to your list of providers in your `app/config/app.php`, and a list of elements for aliases :
 
     'Clef' => 'Caouecs\Clef\Clef'
 
