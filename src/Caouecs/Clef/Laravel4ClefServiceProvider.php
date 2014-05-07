@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class ClefServiceProvider extends ServiceProvider
+class Laravel4ClefServiceProvider extends ServiceProvider
 {
 
     /**
