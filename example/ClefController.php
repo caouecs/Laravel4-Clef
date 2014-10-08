@@ -13,7 +13,7 @@ class ClefController extends BaseController
         $response = \Aperdia\Clef::authentication($_GET['code']);
 
         // error
-        if ($response == false) {
+        if (!$response) {
             $error = 'Error';
         // error
         } elseif (isset($response['error'])) {
@@ -24,12 +24,11 @@ class ClefController extends BaseController
             $verif = Authentication::whereprovider("clef")->whereprovider_uid($response['info']['id'])->first();
 
             // no account
-            if ($verif == null) {
+            if (empty($verif)) {
 
 
             // Find account
             } else {
-
                 // Find the user using the user id
                 $user = User::find($verif->user_id);
 
@@ -49,8 +48,7 @@ class ClefController extends BaseController
             $error = 'Unknown error';
         }
 
-        return Redirect::to("login")
-            ->withErrors($error);
+        return Redirect::to("login")->withErrors($error);
     }
 
     /**
@@ -63,18 +61,17 @@ class ClefController extends BaseController
     {
         // Token from Clef.io
         if (isset($_POST['logout_token'])) {
-
             // Verif token
             $clef = \Aperdia\Clef::logout($_POST['logout_token']);
 
-            if ($clef != false) {
+            if (!$clef) {
                 // Verif in Authentication table
                 $auth = Authentication::whereprovider("clef")->whereprovider_uid($clef)->first();
 
-                if ($auth != null) {
+                if (!empty($auth)) {
                     $user = User::find($auth->user_id);
 
-                    if ($user != null) {
+                    if (!empty($user)) {
                         $user->logout = 1;
                         $user->save();
                     }

@@ -22,7 +22,7 @@ class Clef
         $config = self::config();
 
         // no configuration file
-        if ($config == false) {
+        if (!$config) {
             return false;
         }
 
@@ -43,10 +43,10 @@ class Clef
         $context  = stream_context_create($opts);
         $response = file_get_contents($url, false, $context);
 
-        if ($response != false) {
+        if (!$response) {
             $response = json_decode($response, true);
 
-            if (isset($response['success']) && $response['success'] == true) {
+            if (isset($response['success']) && $response['success']) {
                 return $response['clef_id'];
             }
         }
@@ -67,8 +67,9 @@ class Clef
         $config = self::config();
 
         // no configuration file
-        if ($config == false)
+        if (!$config) {
             return false;
+        }
 
         $url = self::$clef_base_url."authorize";
 
@@ -116,7 +117,7 @@ class Clef
         $context  = stream_context_create($opts);
         $response = file_get_contents($url, false, $context);
 
-        if ($response != false) {
+        if (!$response) {
             $response = json_decode($response, true);
 
             return $response;
@@ -141,7 +142,7 @@ class Clef
         // authorize
         $authorize = self::authorize($code);
 
-        if ($authorize == false) {
+        if (!$authorize) {
             return false;
         }
 
@@ -167,7 +168,7 @@ class Clef
         $config = self::config();
 
         // no configuration file
-        if ($config == false) {
+        if (!$config) {
             return null;
         }
 
@@ -193,7 +194,7 @@ class Clef
         $config = self::config();
 
         // no configuration file
-        if ($config == false) {
+        if (!$config) {
             return null;
         }
 
